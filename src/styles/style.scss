@@ -1,0 +1,9 @@
+@import '/node_modules/normalize.css/normalize.css';
+
+@import 'modules/variables';
+@import 'modules/base';
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background-color: green;
+}
