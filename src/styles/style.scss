@@ -1,9 +1,117 @@
 @import '/node_modules/normalize.css/normalize.css';
-
+@import 'modules/mixin';
 @import 'modules/variables';
 @import 'modules/base';
 
 body {
     font-family: "Montserrat", sans-serif;
-    background-color: green;
+    background-color: white;
+}
+
+.header {
+    position: relative;
+    overflow: hidden;
+    max-width: 1440px;
+    max-height: 500px;
+    height: 500px;
+
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+
+    &-cover {
+        position: absolute;
+        max-height: 500px;
+        height: 500px;
+        width: 100%;
+        z-index: 2;
+
+        background-color: $third-color;
+    }
+
+    &-content {
+        z-index: 3;
+        position: absolute;
+
+        top: 3.75rem;
+
+        @include breakpoint(tablet) {
+            left: 3.875rem;
+        }
+
+        @include breakpoint(mobile) {
+            left: 2.875rem;
+        }
+
+        @include breakpoint(desktop) {
+            left: 11.875rem;
+        }
+    }
+}
+
+.illustration {
+    &.left-leaves {
+        position: absolute;
+        left: 0px;
+        top: 0px;
+
+        height: 500px;
+        width: 862px;
+        z-index: 1;
+
+        @media screen and (max-width: 48rem) {
+            display: none;
+        }
+    }
+
+    &.right-leaves {
+        position: absolute;
+        left: 75%;
+        top: 0px;
+
+        height: 500px;
+        width: 361px;
+        z-index: 1;
+
+        @media screen and (max-width: 48rem) {
+            display: none;
+        }
+    }
+
+    &.plantperson {
+        position: absolute;
+        left: 55.56%;
+        bottom: 7.2%;
+        z-index: 0;
+
+        width: 335px;
+        height: 428px;
+
+        @media screen and (max-width: 48rem) {
+            display: none;
+        }
+    }
+}
+
+.holder {
+    &-noResults {
+        p {
+            line-height: 1.75rem;
+        }
+    }
+}
+
+.filters {
+    margin: 3.625rem 0;
+
+    .filter {
+        @include breakpoint(mobile) {
+            margin-bottom: 1.5rem;
+        }
+    }
+}
+
+.pic {
+    height: 75px;
 }

@@ -1,3 +1,6 @@
+@import 'modules/mixin';
+@import 'modules/variables';
+
 *,
 *:before,
 *:after {
@@ -6,11 +9,236 @@
 
 html {
   box-sizing: border-box;
-  color: $primary-color;
   font-family: $primary-font;
   background: #f1f1f1;
 }
 
 .center {
   text-align: center
+}
+
+.flex {
+  display: flex;
+}
+
+.align {
+  &-center {
+    align-content: center;
+  }
+}
+
+.btn {
+  display: inline-block;
+  min-width: 147px;
+
+  padding: 1rem 2rem;
+
+  background: $btn-color;
+  border-radius: 25px;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+
+  &:hover {
+    background-color: white;
+    border: 1px solid $btn-color;
+    box-sizing: border-box;
+    border-radius: 25px;
+    color: $btn-color;
+  }
+
+  &-top {
+    background-color: transparent;
+    border: 1px solid $btn-color;
+    color: $btn-color;
+  }
+}
+
+/* ===== WIDTH ===== */
+.w {
+  &-100 {
+    width: 100%;
+  }
+}
+
+/* ===== MARGIN ===== */
+.ml05 {
+  margin-left: 0.5rem;
+}
+
+.mt05 {
+  margin-top: 0.5rem;
+}
+
+.mb15 {
+  margin-bottom: 1.5rem;
+}
+
+.mv20 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mv30 {
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+}
+
+/* ===== PADDING ===== */
+.pv {
+  &-7 {
+    padding-bottom: 7rem;
+    padding-top: 7rem;
+  }
+}
+
+.pb {
+  &-8 {
+    padding-bottom: 8rem;
+  }
+}
+
+.pr {
+  &-3 {
+    padding-right: 3rem;
+  }
+}
+
+/* ===== COLOR ===== */
+.bgGray {
+  background-color: $bgGray;
+}
+
+.bgWhite {
+  background-color: white;
+}
+
+.gray {
+  color: $textGray;
+}
+
+.white {
+  color: #fff;
+}
+
+/* ===== INPUTS ===== */
+select {
+
+  padding: 0.8rem 0.6rem;
+
+  border: 1px solid $select-color;
+  box-sizing: border-box;
+  border-radius: 19px;
+  color: $select-color;
+  font-size: 0.8rem;
+}
+
+/* ===== CONTAINER ===== */
+.container {
+  @media (min-width: 576px) {
+    max-width: 540px;
+  }
+
+  @media (min-width: 768px) {
+    max-width: 720px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 960px;
+  }
+
+  @media (min-width: 1200px) {
+    max-width: 1140px;
+  }
+
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.row {
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  flex-direction: column;
+
+  @include breakpoint(tablet){
+    flex-direction: row;
+  }
+
+  @include breakpoint(mobile){
+    flex-direction: row;
+  }
+
+  @include breakpoint(desktop){
+    flex-direction: row;
+  }
+}
+
+.col {
+  -ms-flex-preferred-size: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  max-width: 100%;
+
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
+
+  @include breakpoint(tablet){
+    flex-basis: auto;
+  }
+
+  @include breakpoint(mobile){
+    flex-basis: auto;
+  }
+
+  @include breakpoint(desktop){
+    flex-basis: 0;
+  }
+}
+
+.text {
+  &-cover {
+    max-width: 400px;
+    font-size: 4.375rem;
+    font-weight: bold;
+
+    @include breakpoint(mobile) {
+      font-sizerow : 3.875rem;
+    }
+  }
+
+  &-paragraph {
+    color: $textParagraph;
+  }
+
+  &-title {
+    font-size: 2.5rem;
+  }
+}
+
+/* ==== TEXT FORMAT ====*/
+.bold {
+  font-weight: bold;
+}
+
+
+.d {
+  &-none {
+    display: none !important;
+  }
+}
+
+.d {
+  &-flex {
+    display: flex;
+  }
 }

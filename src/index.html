@@ -15,7 +15,140 @@
   </head>
 
   <body>
-    <img src="./src/images/icons/logo-white.svg" alt="Greenthumb" />
+    <div class="header bgWhite">
+      <div class="header-cover">
+        <img
+          src="./images/hero/desktop/left-leaves.png"
+          class="illustration left-leaves"
+          alt="left-leaves pic cover"
+        />
+        <img
+          src="./images/hero/desktop/plantperson.png"
+          class="illustration plantperson"
+          alt="plantperson pic cover"
+        />
+        <img
+          src="./images/hero/desktop/right-leaves.png"
+          class="illustration right-leaves"
+          alt="right-leaves pic cover"
+        />
+        <img class="illustration leaves-mobile" src="./images/hero/mobile/mobile-leaves.png" alt="leaves pic cover mobile" />
+        <img class="illustration plantperson-mobile" src="./images/hero/mobile/mobile-plantperson.png" alt="plantperson pic cover mobile" />
+      </div>
+      <div class="header-content">
+        <img src="./images/icons/logo-white.svg" alt="Greenthumb pic logo" />
+        <h1 class="text-cover white mv30">Find your next green friend</h1>
+        <img src="./images/icons/arrow-down.svg" alt="arrow-down pic" />
+      </div>
+    </div>
+
+    <div class="bgWhite">
+      <div class="container">
+        <div class="row filters">
+          <div class="col filter">
+            <img
+              class="pic"
+              src="./images/illustrations/sun.png"
+              alt="sun pic"
+            />
+            <p class="text-paragraph mt05 mb15">
+              <span class="bold">1.</span> Set the amount of
+              <span class="bold">sunlight</span> your plant will get.
+            </p>
+            <select
+              class="input-select w-100"
+              name="select-sunlight"
+              id="select-sunlight"
+            >
+              <option value="">Select...</option>
+              <option value="no">No</option>
+              <option value="low">Low</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="col filter">
+            <img
+              class="pic"
+              src="./images/illustrations/wateringcan.png"
+              alt="water pic"
+            />
+            <p class="text-paragraph mt05 mb15">
+              <span class="bold">2.</span> How often do you want to
+              <span class="bold">water</span> your plant?
+            </p>
+            <select
+              class="input-select w-100"
+              name="select-water"
+              id="select-water"
+            >
+              <option value="">Select...</option>
+              <option value="regularly">Regularly</option>
+              <option value="daily">Daily</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+          <div class="col filter">
+            <img
+              class="pic"
+              src="./images/illustrations/dog.png"
+              alt="pet pic"
+            />
+            <p class="text-paragraph mt05 mb15">
+              <span class="bold">3.</span> Do you have pets? Do they
+              <span class="bold">chew</span> plants?
+            </p>
+            <select
+              class="input-select w-100"
+              name="select-pet"
+              id="select-pet"
+            >
+              <option value="">Select...</option>
+              <option value="true">Sim</option>
+              <option value="false">Não</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bgGray pv-7">
+      <div class="container">
+        <div class="row holder-noResults d-none">
+          <div class="col">
+            <h1 class="text-title gray">No results yet…</h1>
+            <p class="gray">
+              Use the filters above to find <br>
+              the plant that best fits your<br>
+              environment :)
+            </p>
+          </div>
+          <div class="col center">
+            <img
+              src="./images/illustrations/no-results.png"
+              alt="no results img"
+            />
+          </div>
+        </div>
+
+        <div class="row holder-gallery d-flex">
+          <div class="col">
+            <img
+              class="pic"
+              src="./images/illustrations/pick.png"
+              alt="our picks picture"
+            />
+            <h1 class="text-title mv20 gray">Our picks for you</h1>
+
+            <div id="gallery" class="gallery"></div>
+
+            <a href="#" class="btn btn-top w-100">
+              <img src="./images/icons/arrow-up.svg" alt="to the top icon" />
+              <span class="ml05">back to the top</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
   </body>
