@@ -1,0 +1,1 @@
+export const ENDPOINT_API: string = 'https://front-br-challenges.web.app/api/v2/green-thumb/';
