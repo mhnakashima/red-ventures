@@ -118,33 +118,38 @@ body {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
-        'item item item'
-        'item item item'
-        'item item item'
-        'item item item'
+        'main main item-zero item-one'
+        'main main item-two item-three'
+        'item-four item-five'
     ;
+    gap: 10px;
     
     &-item{
-        grid-area: item;        
         background-color: white;
-
-        >img{
-            height: 160px;
-            width: 240px;
-        }
 
         &.main{
             grid-area: main;
-
-            >img{
-                height: 353px;
-                width: 299px;
-            }
         }
-    }
 
-    &-image{
-        
+        &-0{
+            grid-area: item-zero;
+        }
+
+        &-1{
+            grid-area: item-one;
+        }
+
+        &-2{
+            grid-area: item-two;
+        }
+
+        &-3{
+            grid-area: item-three;
+        }
+
+        &-4{
+            grid-area: item-four;
+        }
     }
     
     &-price{

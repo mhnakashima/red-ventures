@@ -26,15 +26,15 @@ Array.from([sunlightElement, waterElement, petElement]).forEach(item => {
 
                     result.data.forEach((item: any, index: number) => {
                         
-                        console.log(item);
+                        console.log(item, index);
                         const sunIcon = item.sun ? `<img class="gallery-price-icon" src="./images/icons/${item.sun}-sun.svg" />` : undefined;
                         const toxicityIcon = item.toxicity ? `<img class="gallery-price-icon" src="./images/icons/toxic.svg" />` : undefined;
                         const waterIcon = item.water ? `<img class="gallery-price-icon" src="./images/icons/${item.water}.svg" />` : undefined;
 
                         template += 
                         `
-                            <div class="gallery-item ${item.staff_favorite ? 'main' : ''}">
-                                
+                            <div class="gallery-item ${item.staff_favorite ? 'main' : 'item-${index}'}">
+
                                 <img class="gallery-image" src="${item.url}" loading="lazy" />
                                 <h2 class="gallery-name">${item.name}</h2>
                                 <div class="gallery-price">
