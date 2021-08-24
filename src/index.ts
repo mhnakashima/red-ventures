@@ -25,10 +25,28 @@ Array.from([sunlightElement, waterElement, petElement]).forEach(item => {
                     }
 
                     result.data.forEach((item: any, index: number) => {
+                        
+                        console.log(item);
+                        const sunIcon = item.sun ? `<img class="gallery-price-icon" src="./images/icons/${item.sun}-sun.svg" />` : undefined;
+                        const toxicityIcon = item.toxicity ? `<img class="gallery-price-icon" src="./images/icons/toxic.svg" />` : undefined;
+                        const waterIcon = item.water ? `<img class="gallery-price-icon" src="./images/icons/${item.water}.svg" />` : undefined;
+
                         template += 
                         `
-                            <div class="gallery-item" style="background-image: ${item.url}">
-                                <h2>${item.name}</h2>
+                            <div class="gallery-item ${item.staff_favorite ? 'main' : ''}">
+                                
+                                <img class="gallery-image" src="${item.url}" loading="lazy" />
+                                <h2 class="gallery-name">${item.name}</h2>
+                                <div class="gallery-price">
+                                    <h3 class="gallery-price-title">
+                                        ${item.price}
+                                    </h3>
+                                    <div class="gallery-price-icons">
+                                        ${sunIcon ? sunIcon : ''}
+                                        ${toxicityIcon? toxicityIcon : ''}
+                                        ${waterIcon? waterIcon : ''}
+                                    </div>
+                                </div>
                             </div>
                         `
                     })

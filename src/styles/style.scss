@@ -112,6 +112,49 @@ body {
     }
 }
 
+.gallery{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas: 
+        'item item item'
+        'item item item'
+        'item item item'
+        'item item item'
+    ;
+    
+    &-item{
+        grid-area: item;        
+        background-color: white;
+
+        >img{
+            height: 160px;
+            width: 240px;
+        }
+
+        &.main{
+            grid-area: main;
+
+            >img{
+                height: 353px;
+                width: 299px;
+            }
+        }
+    }
+
+    &-image{
+        
+    }
+    
+    &-price{
+        &-icon{
+            height: 19px;
+            width: 19px;
+        }
+    }
+}
+
 .pic {
     height: 75px;
 }
