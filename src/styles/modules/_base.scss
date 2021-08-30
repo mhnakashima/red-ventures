@@ -179,6 +179,7 @@ select {
   }
 }
 
+
 .col {
   -ms-flex-preferred-size: 0;
   -webkit-box-flex: 1;
@@ -204,6 +205,14 @@ select {
     flex-basis: 0;
   }
 }
+
+
+/*
+.col-3{
+  flex: 0 0 auto;
+  width: 25%;
+}
+*/
 
 .text {
   &-cover {

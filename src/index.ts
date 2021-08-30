@@ -13,11 +13,12 @@ Array.from([sunlightElement, waterElement, petElement]).forEach(item => {
         const sunValue: string = (<HTMLInputElement>sunlightElement).value ? (<HTMLInputElement>sunlightElement).value : 'high';
         const waterValue: string = (<HTMLInputElement>waterElement).value ? (<HTMLInputElement>waterElement).value : 'regularly';
         const petValue: string = (<HTMLInputElement>petElement).value ? (<HTMLInputElement>petElement).value : 'false';
-
+        
         getData(sunValue, waterValue, petValue)
             .then( async(result: any) => {
                 if (result) {
                     let template = '';
+                    let count = 0;
                     hideGallery(false);
 
                     while(gallery.firstChild){
@@ -26,29 +27,35 @@ Array.from([sunlightElement, waterElement, petElement]).forEach(item => {
 
                     result.data.forEach((item: any, index: number) => {
                         
-                        console.log(item, index);
                         const sunIcon = item.sun ? `<img class="gallery-price-icon" src="./images/icons/${item.sun}-sun.svg" />` : undefined;
                         const toxicityIcon = item.toxicity ? `<img class="gallery-price-icon" src="./images/icons/toxic.svg" />` : undefined;
                         const waterIcon = item.water ? `<img class="gallery-price-icon" src="./images/icons/${item.water}.svg" />` : undefined;
 
                         template += 
                         `
-                            <div class="gallery-item ${item.staff_favorite ? 'main' : 'item-${index}'}">
-
-                                <img class="gallery-image" src="${item.url}" loading="lazy" />
-                                <h2 class="gallery-name">${item.name}</h2>
-                                <div class="gallery-price">
-                                    <h3 class="gallery-price-title">
-                                        ${item.price}
-                                    </h3>
-                                    <div class="gallery-price-icons">
-                                        ${sunIcon ? sunIcon : ''}
-                                        ${toxicityIcon? toxicityIcon : ''}
-                                        ${waterIcon? waterIcon : ''}
+                            <div class="gallery-item ${item.staff_favorite ? 'main' : 'item-' + count }">
+                                <div class="gallery-holder">
+                                    ${item.staff_favorite ? '<span>favourite</span>' : ''}
+                                    <div class="gallery-image" style="background-image: url(${item.url})" />
+                                    </div>
+                                    <h2 class="gallery-name">${item.name}</h2>
+                                    <div class="gallery-price">
+                                        <h3 class="gallery-price-title">
+                                            ${item.price}
+                                        </h3>
+                                        <div class="gallery-price-icons">
+                                            ${sunIcon ? sunIcon : ''}
+                                            ${toxicityIcon? toxicityIcon : ''}
+                                            ${waterIcon? waterIcon : ''}
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         `
+
+                        if(!item.staff_favorite){
+                            count++;
+                        }
                     })
                     
                     gallery

@@ -113,42 +113,34 @@ body {
 }
 
 .gallery{
-
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: auto;
     grid-template-areas: 
-        'main main item-zero item-one'
-        'main main item-two item-three'
-        'item-four item-five'
-    ;
+        "main main item-0 item-1"
+        "main main item-2 item-3"
+        "item-4 item-5 item-6 item-7"
+        "item-8 item-9 item-10 item-11";
     gap: 10px;
+
+    margin-bottom: 20px;
+
+    &-holder{
+        position: relative;
+        background-color: white;
+        border-radius: 5px;
+    }
     
     &-item{
-        background-color: white;
-
         &.main{
             grid-area: main;
         }
 
-        &-0{
-            grid-area: item-zero;
-        }
+        padding: 10px;
+    }
 
-        &-1{
-            grid-area: item-one;
-        }
-
-        &-2{
-            grid-area: item-two;
-        }
-
-        &-3{
-            grid-area: item-three;
-        }
-
-        &-4{
-            grid-area: item-four;
+    $max: 10;
+    @for $i from 0 through $max {
+        .item-#{$i}{
+            @include gridaame(grid-area, $i)
         }
     }
     
@@ -158,8 +150,25 @@ body {
             width: 19px;
         }
     }
+
+    &-image{
+        height: 161px;
+        width: 167px;
+
+        background-position: 50% 50%;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    &-name{
+        
+    }
 }
 
 .pic {
     height: 75px;
+
+    @include breakpoint(tablet){
+        margin-top: 10px;
+    }
 }

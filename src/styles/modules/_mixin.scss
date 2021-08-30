@@ -20,3 +20,7 @@ BREAKPOINTS
         }
     }
 }
+
+@mixin gridaame($property, $value) {
+    #{$property}: item- + $value;
+}
